@@ -1,4 +1,3 @@
-&lt;div align=&quot;center&quot;&gt;
 
 # 🖱️⌨️ MacroStudio Pro
 
@@ -12,11 +11,11 @@
 
 [🇷🇺 Русский](#-русская-версия) • [🌐 English](#-english-version)
 
-&lt;/div&gt;
+
 
 ---
 
-&lt;a name=&quot;-русская-версия&quot;&gt;&lt;/a&gt;
+
 ## 🇷🇺 Русская версия
 
 **MacroStudio Pro** — это готовое и надежное решение для автоматизации рутинных задач на компьютере. Программа точно записывает каждый клик мыши, движение курсора, скролл и нажатие клавиш, позволяет визуально редактировать макросы в таблице и воспроизводить их с гибкими настройками скорости и задержек.
@@ -83,7 +82,7 @@ chmod +x Start_Linux.sh
 
 ---
 
-&lt;a name=&quot;-english-version&quot;&gt;&lt;/a&gt;
+
 ## 🌐 English Version
 
 **MacroStudio Pro** is a powerful, lightweight, cross-platform automation utility designed to record, visually edit, and flawlessly replay mouse and keyboard actions.

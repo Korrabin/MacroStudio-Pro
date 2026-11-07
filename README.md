@@ -20,7 +20,6 @@
 
 **MacroStudio Pro** — это готовое и надежное решение для автоматизации рутинных задач на компьютере. Программа точно записывает каждый клик мыши, движение курсора, скролл и нажатие клавиш, позволяет визуально редактировать макросы в таблице и воспроизводить их с гибкими настройками скорости и задержек.
 
-Главное преимущество — **работает из коробки на чистой ОС** без обязательной установки сторонних библиотек и пакетов Python!
 
 ### 🌟 Ключевые возможности
 
@@ -87,7 +86,6 @@ chmod +x Start_Linux.sh
 
 **MacroStudio Pro** is a powerful, lightweight, cross-platform automation utility designed to record, visually edit, and flawlessly replay mouse and keyboard actions.
 
-It is built with **zero mandatory external dependencies**, running out-of-the-box on clean installations of Windows, macOS, and Linux without requiring `pip install`.
 
 ### 🌟 Key Features
 

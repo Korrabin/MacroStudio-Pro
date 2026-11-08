@@ -1,156 +1,93 @@
-<div align="center">
+# MacroStudio Pro
 
-# 🖱️⌨️ MacroStudio Pro
+Записывайте действия мыши и клавиатуры, редактируйте их по шагам и воспроизводите на Windows, macOS и Linux.  
+Record mouse and keyboard actions, edit them step by step, and replay them on Windows, macOS, and Linux.
 
-**Cross-Platform Mouse & Keyboard Recorder, Visual Step Editor, and Automation Studio**  
-*Кроссплатформенная программа для записи, редактирования и воспроизведения действий мыши и клавиатуры*
-
-[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue.svg)](#-быстрый-старт--quick-start)
-[![Release](https://img.shields.io/badge/Release-v1.0.0-brightgreen.svg)](#-ключевые-возможности)
-[![Hotkeys](https://img.shields.io/badge/Hotkeys-F1--F12%20(No%20NVIDIA%20Conflict)-orange.svg)](#-горячие-клавиши)
-
-[🇷🇺 Русский](#-русская-версия) • [🌐 English](#-english-version)
-
-</div>
+[Русский](#русский) · [English](#english)
 
 ---
 
-<a name="-русская-версия"></a>
-## 🇷🇺 Русская версия
+## Русский
 
-**MacroStudio Pro** — это комплекс для автоматизации действий на компьютере. Программа записывает клики мыши, движение курсора, прокрутку колеса и нажатия клавиш, позволяет редактировать макросы в табличном редакторе шагов и воспроизводить их с настройкой скорости, расписания и интервалов.
+### Возможности
 
-### 🌟 Ключевые возможности
+- **Запись и воспроизведение**: клики, движения курсора, прокрутка, нажатия клавиш.
+- **Редактор шагов**: смотрите тайминги, координаты и клавиши, добавляйте клики, ввод текста, паузы и команды вручную, сжимайте лишние паузы одним кликом.
+- **Режимы повтора**: один раз, N раз, по времени (часы / минуты / секунды) или бесконечно. Скорость настраивается от 0.25× до 4×.
+- **Естественное поведение**: случайные задержки между циклами и лёгкий джиттер курсора.
+- **Безопасность**: аварийная остановка по `Esc` / `F12` или уводом курсора в левый верхний угол экрана.
+- **После завершения**: выключить ПК, уйти в сон, заблокировать экран или закрыть программу.
+- **Веб-панель**: запустите с флагом `--web` и откройте `http://127.0.0.1:8765`.
 
-- 🖥️ **Кроссплатформенная архитектура**:
-  - **Windows**: Нативная работа через системный Win32 API (`user32.dll`) и облегченная сборка `MacroStudio.exe`.
-  - **macOS**: Поддержка системного фреймворка `ApplicationServices / Quartz` и `osascript`.
-  - **Linux**: Поддержка `X11 / XTest` (`libX11.so.6`, `libXtst.so.6`) и предсобранного нативного модуля.
-  - **Веб-панель управления**: Встроенный локальный веб-интерфейс (`http://127.0.0.1:8765`) при запуске с параметром `--web`.
-- ⌨️ **Удобные горячие клавиши F1–F12 (Без конфликтов с NVIDIA)**:
-  - Управление назначено на одиночные функциональные клавиши (`F9`, `F10`, `F7`, `F8`), которые не вызывают оверлей GeForce Experience / ShadowPlay.
-- ✎ **Визуальный конструктор и редактор макросов**:
-  - Просмотр каждого шага: тайминги, координаты $X, Y$, клавиши и кнопки мыши.
-  - Добавление действий вручную: клики, перемещения, ввод текста, паузы, запуск внешних программ и команд.
-  - Сжатие длинных пауз между действиями в один клик.
-- 🔁 **Гибкие режимы повтора**:
-  - Повторить 1 раз (`Repeat once`).
-  - Повторить заданное число раз (`Repeat N times`).
-  - Повторять заданное время: часы / минуты / секунды (`Repeat for time`).
-  - Бесконечный цикл (`Infinite Loop`).
-- 🛡️ **Гуманизация и защита**:
-  - Случайные и фиксированные задержки между циклами.
-  - Плавное микро-отклонение траектории мыши (джиттер).
-  - Аварийная остановка клавишей `Esc` / `F12` и защита **Fail-Safe** (увод курсора в левый верхний угол экрана `0, 0`).
-- ⚡ **Действия по завершении**: автоматическое выключение ПК, переход в спящий режим, блокировка экрана или закрытие программы.
+### Горячие клавиши
 
----
+| Клавиша | Действие |
+| :---: | :--- |
+| `F9` | Начать / остановить запись |
+| `F10` | Запустить / остановить повтор |
+| `F7` | Пауза |
+| `F8` | Захватить координаты курсора |
+| `Esc` / `F12` | Аварийная остановка |
 
-### ⌨️ Горячие клавиши
+Клавиши можно переназначить на любые `F1`–`F12` во вкладке «Горячие клавиши и Таймер». По умолчанию выбраны клавиши, которые не конфликтуют с оверлеем NVIDIA.
 
-| Клавиша по умолчанию | Назначение | Описание |
-| :---: | :--- | :--- |
-| **`F9`** | **Старт / Стоп записи** | Начинает перехват действий или сохраняет макрос |
-| **`F10`** | **Старт / Стоп повтора** | Запускает воспроизведение выбранной записи или останавливает цикл |
-| **`F7`** | **Пауза** | Временная приостановка записи или повтора |
-| **`F8`** | **Захват координат $X, Y$** | Мгновенно копирует текущее положение курсора в конструктор шагов |
-| **`Esc`** или **`F12`** | **Аварийный стоп (Panic Stop)** | Немедленно прерывает выполнение макроса |
+### Запуск
 
-*Любую функциональную клавишу можно переназначить на `F1`–`F12` во вкладке «Горячие клавиши и Таймер».*
+- **Windows**: двойной клик по `Start_Windows.bat`
+- **macOS**: двойной клик по `Start_macOS.command`. При первом запуске разрешите доступ в «Системные настройки → Конфиденциальность и безопасность → Универсальный доступ».
+- **Linux**:
+  ```bash
+  chmod +x Start_Linux.sh
+  ./Start_Linux.sh
+  ```
+
+Или запустите напрямую: `python mouse_keyboard_recorder.py`
 
 ---
 
-### 🚀 Быстрый запуск
+## English
 
-#### 🪟 Windows (10 / 11)
-Запустите файл **`Start_Windows.bat`** двойным кликом (или выполните `python mouse_keyboard_recorder.py`).
+### Features
 
-#### 🍏 macOS
-Запустите файл **`Start_macOS.command`** двойным кликом (или выполните в терминале `python3 mouse_keyboard_recorder.py`).  
-> *Примечание: при первом запуске разрешите Терминалу управление в «Системные настройки → Конфиденциальность и безопасность → Универсальный доступ».*
+- **Record and replay**: clicks, cursor movement, scrolling, key presses.
+- **Step editor**: view timings, coordinates, and keys; add clicks, typed text, delays, and commands manually; trim idle pauses in one click.
+- **Playback modes**: once, N times, for a set time (hours / minutes / seconds), or in a loop. Speed ranges from 0.25× to 4×.
+- **Natural behavior**: randomized delays between cycles and slight cursor jitter.
+- **Safety**: panic stop with `Esc` / `F12`, or by moving the cursor to the top-left corner of the screen.
+- **After finishing**: shut down, sleep, lock the screen, or exit the app.
+- **Web panel**: run with `--web` and open `http://127.0.0.1:8765`.
 
-#### 🐧 Linux
-Запустите в терминале:
-```bash
-chmod +x Start_Linux.sh
-./Start_Linux.sh
-```
+### Hotkeys
 
----
+| Key | Action |
+| :---: | :--- |
+| `F9` | Start / stop recording |
+| `F10` | Start / stop playback |
+| `F7` | Pause / resume |
+| `F8` | Capture cursor coordinates |
+| `Esc` / `F12` | Panic stop |
 
-<a name="-english-version"></a>
-## 🌐 English Version
+Hotkeys can be remapped to any `F1`–`F12` key in the "Hotkeys & Scheduler" tab. The defaults avoid conflicts with the NVIDIA overlay.
 
-**MacroStudio Pro** is a cross-platform desktop automation suite designed to record, visually edit, and replay mouse and keyboard actions across Windows, macOS, and Linux.
+### Quick start
 
-### 🌟 Key Features
+- **Windows**: double-click `Start_Windows.bat`
+- **macOS**: double-click `Start_macOS.command`. On first launch, grant access under System Settings → Privacy & Security → Accessibility.
+- **Linux**:
+  ```bash
+  chmod +x Start_Linux.sh
+  ./Start_Linux.sh
+  ```
 
-- 🖥️ **Multi-Platform Native Engines**:
-  - **Windows**: Direct Win32 API (`user32.dll`) integration alongside a lightweight native `MacroStudio.exe` build.
-  - **macOS**: Quartz / CoreGraphics (`ApplicationServices`) and `osascript` integration.
-  - **Linux**: X11 / XTest dynamic loader (`libX11.so.6`, `libXtst.so.6`) with a pre-compiled native binary.
-  - **Web Control Panel**: Built-in local web interface (`http://127.0.0.1:8765`) when launched with `--web`.
-- ⌨️ **NVIDIA-Safe Functional Hotkeys**:
-  - Eliminates conflicts with NVIDIA GeForce Experience / ShadowPlay by using customizable single F-keys (`F9`, `F10`, `F7`, `F8`).
-- ✎ **Visual Step Editor & Macro Builder**:
-  - Inspect every recorded event with timestamps, coordinates, keys, and mouse buttons.
-  - Manually add steps: mouse clicks, cursor movement, text typing, delays, and shell commands.
-  - One-click **delay compressor** to trim idle pauses.
-- 🔁 **Flexible Playback Modes**:
-  - Repeat once, repeat $N$ times, timed repeat (hours / minutes / seconds), or infinite loop.
-  - Adjustable playback speed slider ($0.25\times$ Slow to $4.0\times$ Fast).
-- 🛡️ **Humanization & Safety**:
-  - Randomized inter-cycle delays and cursor micro-jittering.
-  - Instant panic stops via `Esc` / `F12` and upper-left screen corner `(0, 0)` **Fail-Safe**.
-- ⚡ **Automated Post-Actions**: Shutdown computer, sleep, lock workstation, or exit application upon completion.
+Or run directly: `python mouse_keyboard_recorder.py`
 
 ---
 
-### ⌨️ Default Hotkeys
+## Releases
 
-| Hotkey | Action | Description |
-| :---: | :--- | :--- |
-| **`F9`** | **Record / Stop** | Toggle mouse and keyboard action recording |
-| **`F10`** | **Repeat / Stop** | Toggle playback of the selected macro |
-| **`F7`** | **Pause / Resume** | Temporarily pause active recording or replay |
-| **`F8`** | **Capture $X, Y$** | Grab current cursor position into the step editor |
-| **`Esc`** / **`F12`** | **Panic Stop** | Immediately terminate macro execution |
+GitHub Actions builds standalone executables on every push to `main`:
+`MacroStudio-Windows-x64.exe`, `MacroStudio-Native-Light.exe`, `MacroStudio-macOS`, `MacroStudio-Linux-x64`.
 
-*Hotkeys can be customized to any `F1`–`F12` key in the "Hotkeys & Scheduler" tab.*
+## License
 
----
-
-### 🚀 Quick Start
-
-#### 🪟 Windows
-Double-click **`Start_Windows.bat`** (or run `python mouse_keyboard_recorder.py`).
-
-#### 🍏 macOS
-Double-click **`Start_macOS.command`** (or run `python3 mouse_keyboard_recorder.py`).  
-> *Note: Grant Accessibility permission under "System Settings → Privacy & Security → Accessibility" when prompted.*
-
-#### 🐧 Linux
-Run in your terminal:
-```bash
-chmod +x Start_Linux.sh
-./Start_Linux.sh
-```
-
----
-
-## 🛠️ GitHub Actions Automated Releases
-
-This repository includes a CI/CD workflow (`.github/workflows/release.yml`).  
-Whenever you push to `main` or trigger a release, GitHub Actions automatically builds standalone executables:
-- `MacroStudio-Windows-x64.exe`
-- `MacroStudio-Native-Light.exe`
-- `MacroStudio-macOS`
-- `MacroStudio-Linux-x64`
-
----
-
-## 📄 License
-
-This project is dedicated to the public domain under the **Creative Commons Zero v1.0 Universal (CC0 1.0)** license.  
-You can copy, modify, distribute, and perform the work, even for commercial purposes, all without asking permission. See the [CC0 1.0 Universal Summary](https://creativecommons.org/publicdomain/zero/1.0/) for details.
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/): public domain, use it however you like.
